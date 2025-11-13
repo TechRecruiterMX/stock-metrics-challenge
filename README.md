@@ -1,35 +1,51 @@
-# stock-metrics-challenge
+# 🧮 Stock Metrics Challenge (React)
 
-Coding challenge: analyze stock data and calculate financial metrics.
+**Frontend coding challenge** — Consume una API que entrega datos financieros y muestra métricas calculadas en una interfaz hecha con **React**.
 
-## Ejercicio de Programación
+---
 
-Tienes acceso a un API que regresa información de valores financieros.  
-Cada llamada devuelve un arreglo con **500 elementos**.
+## 🎯 Objetivo
 
-Cada elemento tiene la siguiente estructura:
+Desarrollar una aplicación web con **React** que:
+1. Llame 5 veces al endpoint del API (páginas 1–5, cada una con 500 elementos).
+2. Combine los datos obtenidos (2500 registros en total).
+3. Calcule y muestre las siguientes métricas:
+   - 📉 **Métrica 1:** El valor más bajo entre todos los campos `low`.
+   - 📈 **Métrica 2:** El promedio de los valores `open` del año 2020.
+   - 🧭 **Métrica 3:** La fecha con la mayor diferencia entre `high` y `low`.
 
-```json
-{
-  "date": "2006-01-03",
-  "open": 10.5,
-  "high": 12.0,
-  "low": 9.8,
-  "close": 11.2
-}
-### Requerimientos
+4. Visualiza los resultados de forma clara (tabla, tarjetas o gráfico).
+5. Agrega indicadores de *loading*, *error* y una interfaz limpia.
 
-1. Haz **5 llamadas al API** (`page=1` hasta `page=5`).  
-   - Cada llamada trae **500 elementos**.  
-   - En total tendrás **2500 elementos**.  
+---
 
-2. A partir de estos 2500 elementos, calcula las siguientes **tres métricas**:  
-   - 📉 **Métrica 1:** El valor más bajo de todos los campos `low`.  
-   - 📊 **Métrica 2:** El **promedio** de los valores `open` únicamente para los elementos del **año 2006**.  
-   - 📈 **Métrica 3:** La **racha positiva más larga**, es decir, la secuencia más larga de días consecutivos en la que `close > open`.  
+## ⚙️ Requisitos técnicos
 
-### Entregable
+- Usa **React 18+** (CRA, Vite o Next.js).
+- Puedes usar TypeScript o JavaScript.
+- Se permiten librerías como:
+  - `axios` o `fetch` para API calls
+  - `chart.js` o `recharts` (opcional)
+  - `tailwindcss` o `styled-components` (opcional)
 
-- Tu código debe hacer las llamadas al API (o simularlas, si no se cuenta con un endpoint real).  
-- Al final, imprime en consola las 3 métricas con resultados claros.  
-- Puedes usar cualquier lenguaje de programación.  
+---
+
+## 📦 Entregables
+
+Tu aplicación debe incluir:
+- Componente principal (`App.jsx` o `App.tsx`).
+- Lógica para hacer las llamadas al API (paginadas).
+- Cálculo de métricas.
+- Renderizado visual de resultados.
+
+---
+
+## ▶️ Cómo ejecutar
+
+Si usas **Vite**, por ejemplo:
+
+```bash
+git clone <TU_REPO_URL>
+cd stock-metrics-challenge
+npm install
+npm run dev
